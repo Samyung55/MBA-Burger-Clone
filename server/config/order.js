@@ -17,5 +17,23 @@ export const placeOrder = asyncError(async (req, res, next) => {
     } = req.body;
 
     const user = req.user._id
-    
-})
+
+    const orderOptions = {
+        shippingInfo,
+        orderItems,
+        paymentMethod,
+        itemsPrice,
+        shippingCharges,
+        totalAmount,
+        user,
+    };
+
+    await Order.create(orderOptions)
+
+    res.status(201).json({
+        success: true,
+        message: "Order Placed Successfully via Cash on Delivery"
+    });
+});
+
+
