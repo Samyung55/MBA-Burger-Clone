@@ -114,7 +114,7 @@ export const paymentVerification = asyncError(async(req, res, next) => {
       }
 })
 
-export const getMyOrders = asyncError(asyncError(req, res, next) => {
+export const getMyOrders = asyncError(async (req, res, next) => {
     const orders = await Order.find({
         user: req.user._id,
     }).populate("user", "name")
@@ -124,3 +124,4 @@ export const getMyOrders = asyncError(asyncError(req, res, next) => {
         orders,
     });
 });
+
