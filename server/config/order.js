@@ -58,5 +58,20 @@ export const placeOrderOnline = asyncError(async (req, res, next) => {
         shippingCharges,
         totalAmount,
         user
-    }    
-})
+    };
+
+    const options = {
+        amount: Number(totalAmount) * 100,
+        currency: "USD",
+    };
+
+    const order = await instance.orders.create(options);
+    
+    res.status(201).json({
+        success: true,
+        order,
+        orderOptions,
+    });
+});
+
+
