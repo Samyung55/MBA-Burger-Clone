@@ -156,4 +156,10 @@ export const getAdminOrders = asyncError(async (req, res, next) => {
       order.deliveredAt = new Date(Date.now());
     } else if (order.orderStatus === "Delivered")
       return next(new ErrorHandler("Food Already Delivered", 400));
-  
+      await order.save();
+
+      res.status(200).json({
+        success: true,
+        message: "Status Updated Successfully",
+      });
+    });
