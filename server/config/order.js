@@ -144,3 +144,8 @@ export const getAdminOrders = asyncError(async (req, res, next) => {
       orders,
     });
   });
+
+  export const processOrder = asyncError(async (req, res, next) => {
+    const order = await Order.findById(req.params.id);
+  
+    if (!order) return next(new ErrorHandler("Invalid Order Id", 404));
