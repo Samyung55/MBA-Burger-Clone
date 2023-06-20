@@ -149,3 +149,11 @@ export const getAdminOrders = asyncError(async (req, res, next) => {
     const order = await Order.findById(req.params.id);
   
     if (!order) return next(new ErrorHandler("Invalid Order Id", 404));
+
+    if (order.orderStatus === "Preparing") order.orderStatus = "Shipped";
+    else if (order.orderStatus === "Shipped") {
+      order.orderStatus = "Delivered";
+      order.deliveredAt = new Date(Date.now());
+    } else if (order.orderStatus === "Delivered")
+      return next(new ErrorHandler("Food Already Delivered", 400));
+  
