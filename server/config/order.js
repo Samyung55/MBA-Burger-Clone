@@ -108,5 +108,19 @@ export const paymentVerification = asyncError(async(req, res, next) => {
             success: true,
             message: `Order Placed Successfully. Payment ID: ${payment._id}`
         });
-    }
+    } 
+    else {
+        return next(new ErrorHandler("Payment Failed", 400));
+      }
 })
+
+export const getMyOrders = asyncError(asyncError(req, res, next) => {
+    const orders = await Order.find({
+        user: req.user._id,
+    }).populate("user", "name")
+
+    res.status(200).json({
+        success: true,
+        orders,
+    });
+});
