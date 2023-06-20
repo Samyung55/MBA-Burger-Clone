@@ -88,4 +88,25 @@ export const paymentVerification = asyncError(async(req, res, next) => {
     .createHmac("sha256", process.env.RAZORPAY_API_SECRET)
     .update(body)
     .digest("hex")
+
+    const isAuthentic = expectedSignature === razorpay_signature;
+
+    if(isAuthentic) {
+        const payment = await Payment.create({
+            razorpay_order_id,
+            razorpay_payment_id,
+            razorpay_signature,
+        });
+
+        await Order.create({
+            ...orderOptions,
+            paidAt: new Date(Date.now()),
+            paymentInfo: payment._id,
+        });
+
+        res.status(201).json({
+            success: true,
+            message: `Order Placed Successfully. Payment ID: ${payment._id}`
+        });
+    }
 })
