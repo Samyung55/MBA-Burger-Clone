@@ -74,4 +74,18 @@ export const placeOrderOnline = asyncError(async (req, res, next) => {
     });
 });
 
+export const paymentVerification = asyncError(async(req, res, next) => {
+    const {
+        razorpay_payment_id,
+        razorpay_order_id,
+        razorpay_signature,
+        orderOptions,
+    } = req.body;
 
+    const body = razorpay_order_id + "|" + razorpay_payment_id;
+
+    const expectedSignature = crypto
+    .createHmac("sha256", process.env.RAZORPAY_API_SECRET)
+    .update(body)
+    .digest("hex")
+})
