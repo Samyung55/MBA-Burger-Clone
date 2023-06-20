@@ -135,3 +135,12 @@ export const getOrderDetails = asyncError(async(req, res, next) => {
         order,
     })
 })
+
+export const getAdminOrders = asyncError(async (req, res, next) => {
+    const orders = await Order.find({}).populate("user", "name");
+  
+    res.status(200).json({
+      success: true,
+      orders,
+    });
+  });
