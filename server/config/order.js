@@ -125,3 +125,13 @@ export const getMyOrders = asyncError(async (req, res, next) => {
     });
 });
 
+export const getOrderDetails = asyncError(async(req, res, next) => {
+    const order = await Order.findById(req.params.id).populate("user", "name")
+
+    if(!order) return next(new ErrorHandler("Invalid Order ID", 404));
+
+    res.status(200).json({
+        success: true,
+        order,
+    })
+})
