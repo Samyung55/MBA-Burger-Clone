@@ -1,6 +1,6 @@
-import app from "./app.js";
-import { connectDB } from "./config/database.js";
-import Razorpay from "razorpay";
+const app = require("./app.js");
+const { connectDB } = require("./config/database.js");
+const Razorpay = require("razorpay");
 connectDB();
 
 export const instance = new Razorpay({
