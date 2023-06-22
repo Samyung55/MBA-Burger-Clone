@@ -1,4 +1,4 @@
-import ErrorHandler from "../Utils/ErrorHandler";
+const ErrorHandler = require("../Utils/ErrorHandler");
 
 export const isAuthenticated = (req, res, next) => {
   const token = req.cookies["connect.sid"];
