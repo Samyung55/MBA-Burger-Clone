@@ -29,3 +29,7 @@ router.get("/me", isAuthenticated, myProfile)
 router.get("/logout", logout)
 
 router.get("/admin/users", isAuthenticated, authorizeAdmin, getAdminUsers)
+
+router.get("/admin/stats", isAuthenticated, authorizeAdmin, getAdminStats)
+
+export default router
