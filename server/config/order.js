@@ -1,9 +1,9 @@
-import { asyncError } from "../middlewares/errorMiddleware.js";
-import  Order from "../Models/Order.js";
-import { Payment } from "../Models/Payment.js";
-import ErrorHandler from "../Utils/ErrorHandler.js";
-import { instance } from "../server.js";
-import crypto from "crypto";
+const { asyncError } = "../middlewares/errorMiddleware.js";
+const  Order = "../Models/Order.js";
+const { Payment } = "../Models/Payment.js";
+const ErrorHandler = "../Utils/ErrorHandler.js";
+const { instance } = "../server.js";
+const crypto = "crypto";
 
 export const placeOrder = asyncError(async (req, res, next) => {
     const {
