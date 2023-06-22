@@ -1,4 +1,4 @@
-import { asyncError } from "../middlewares/errorMiddleware.js";
+const { asyncError } = require("../middlewares/errorMiddleware.js");
 import { User } from "../Models/User.js";
 import { Order } from "../Models/Order.js";
 
