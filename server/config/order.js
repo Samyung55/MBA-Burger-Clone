@@ -1,9 +1,9 @@
-const { asyncError } = "../middlewares/errorMiddleware.js";
-const  Order = "../Models/Order.js";
-const { Payment } = "../Models/Payment.js";
-const ErrorHandler = "../Utils/ErrorHandler.js";
-const { instance } = "../server.js";
-const crypto = "crypto";
+const { asyncError } = require("../middlewares/errorMiddleware.js");
+const  Order = require("../Models/Order.js");
+const { Payment } = require("../Models/Payment.js");
+const ErrorHandler = require("../Utils/ErrorHandler.js");
+const { instance } = require("../server.js");
+const crypto = require("crypto");
 
 export const placeOrder = asyncError(async (req, res, next) => {
     const {
