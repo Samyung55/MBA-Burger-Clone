@@ -42,3 +42,11 @@ app.use(
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
+
+app.use(passport.authenticate("session"));
+app.use(passport.initialize());
+app.use(passport.session());
+app.enable("trust proxy");
+
+connectPassport();
+
