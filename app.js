@@ -6,3 +6,10 @@ const cookieParser = require("cookie-parser")
 const passport = require("passport")
 const { errorMiddleware } = require("./middlewares/errorMiddleware.js")
 const cors = require("cors")
+
+const app = express();
+export default app;
+dotenv.config({
+  path: "./config/config.env",
+});
+
