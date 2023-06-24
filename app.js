@@ -50,3 +50,12 @@ app.enable("trust proxy");
 
 connectPassport();
 
+// Routes
+const userRoute = require("./routes/user.js")
+const orderRoute = require("./routes/order.js")
+
+app.use("/api/v1", userRoute);
+app.use("/api/v1", orderRoute);
+
+// Using Error Middleware
+app.use(errorMiddleware);
