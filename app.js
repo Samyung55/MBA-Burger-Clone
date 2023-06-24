@@ -1,4 +1,4 @@
-const express, { urlencoded } = require("express")
+const { express, urlencoded } = require("express")
 const dotenv = require("dotenv")
 const { connectPassport } = require("./utils/Provider.js")
 const session = require("express-session")
