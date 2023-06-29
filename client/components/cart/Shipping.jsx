@@ -54,3 +54,5 @@ const Shipping = () => {
         </section>
     )
 }
+
+export default Shipping;
