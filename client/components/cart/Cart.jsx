@@ -69,3 +69,5 @@ const Cart = () => {
         </section>
     )
 }
+
+export default Cart;
