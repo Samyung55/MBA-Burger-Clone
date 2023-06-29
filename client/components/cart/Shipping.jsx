@@ -17,7 +17,29 @@ const Shipping = () => {
                         <label>City</label>
                         <input type="text" placeholder="Enter City"  />
                     </div>
-                    
+                    <div>
+                        <label>Country</label>
+                        <select>
+                            <option value=""></option>
+                                {Country && Country.getAllCountries().map((i) => (
+                                    <option value={i.isoCode} key={i.isoCode}>
+                                        {i.name}
+                                    </option>
+                                ))}
+                        </select>
+                    </div>
+                    <div>
+                        <label>State</label>
+                        <select>
+                            <option value="">State</option>
+                        {State &&
+                            State.getStatesOfCountry("IN").map((i) => (
+                            <option value={i.isoCode} key={i.isoCode}>
+                                {i.name}
+                            </option>
+                            ))}
+                        </select>
+                    </div>
                 </form>
             </main>
         </section>
