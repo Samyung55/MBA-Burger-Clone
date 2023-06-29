@@ -34,7 +34,26 @@ const Contact = () => {
                 opacity: 1,
                 }}
                 transition={{ delay: 0.2 }}
-                ></motion.div>
+                >
+
+            <motion.div
+                initial={{
+                y: "-100vh",
+                x: "50%",
+                opacity: 0,
+                }}
+                animate={{
+                x: "50%",
+                y: "-50%",
+                opacity: 1,
+                }}
+                transition={{
+                delay: 1,
+                }}
+            >
+                <img src={burger} alt="Burger" />
+            </motion.div>
+            </motion.div>
         </section>
     )
 }
