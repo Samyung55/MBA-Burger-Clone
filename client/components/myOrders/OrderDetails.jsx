@@ -71,4 +71,23 @@ const OrderDetails = () => {
           </p>
         </div>
 
-        
+        <article>
+          <h1>Ordered Items</h1>
+          <div>
+            <h4>Cheese Burger</h4>
+            <div>
+              <span>{12}</span> x <span>{232}</span>
+            </div>
+          </div>
+          <div>
+            <h4>Veg Cheese Burger</h4>
+            <div>
+              <span>{10}</span> x <span>{500}</span>
+            </div>
+          </div>
+          <div>
+            <h4>Burger Fries</h4>
+            <div>
+              <span>{10}</span> x <span>{1800}</span>
+            </div>
+          </div>
