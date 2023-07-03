@@ -39,3 +39,18 @@ const OrderDetails = () => {
             {"23-02-2003"}
           </p>
         </div>
+
+        <div>
+          <h1>Payment</h1>
+          <p>
+            <b>Payment Method</b>
+            {"Online"}
+          </p>
+          <p>
+            <b>Payment Reference</b>#{"asdasdsadsad"}
+          </p>
+          <p>
+            <b>Paid At</b>
+            {"23-02-2003"}
+          </p>
+        </div>
