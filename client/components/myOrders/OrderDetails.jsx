@@ -54,3 +54,21 @@ const OrderDetails = () => {
             {"23-02-2003"}
           </p>
         </div>
+
+        <div>
+          <h1>Amount</h1>
+          <p>
+            <b>Items Total</b>₹{2132}
+          </p>
+          <p>
+            <b>Shipping Charges</b>₹{200}
+          </p>
+          <p>
+            <b>Tax</b>₹{232}
+          </p>
+          <p>
+            <b>Total Amount</b>₹{232 + 200 + 2132}
+          </p>
+        </div>
+
+        
