@@ -34,5 +34,35 @@ const Profile = () => {
             <MdDashboard /> Dashboard
           </Link>
         </motion.div>
+        <motion.div
+          initial={{
+            x: "-100vw",
+            opacity: 0,
+          }}
+          animate={{
+            x: 0,
+            opacity: 1,
+          }}
+        >
+          <Link to="/myorders">Orders</Link>
+        </motion.div>
+
+        <motion.button
+          initial={{
+            x: "-100vw",
+            opacity: 0,
+          }}
+          animate={{
+            x: 0,
+            opacity: 1,
+          }}
+          transition={{
+            delay: 0.3,
+          }}
+        >
+          Logout
+        </motion.button>
+      </main>
+    </section>
 )
 }
