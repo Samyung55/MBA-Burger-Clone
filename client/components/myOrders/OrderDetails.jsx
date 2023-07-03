@@ -23,3 +23,19 @@ const OrderDetails = () => {
             {2131232123}
           </p>
         </div>
+
+        <div>
+          <h1>Status</h1>
+          <p>
+            <b>Order Status</b>
+            {"Processing"}
+          </p>
+          <p>
+            <b>Placed At</b>
+            {"23-02-2002"}
+          </p>
+          <p>
+            <b>Delivered At</b>
+            {"23-02-2003"}
+          </p>
+        </div>
