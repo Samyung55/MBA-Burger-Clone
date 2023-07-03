@@ -16,5 +16,23 @@ const Profile = () => {
         },
       };
 
-      
+      return (
+        <section className="profile">
+      <main>
+        <motion.img src={me} alt="User" {...options} />
+        <motion.h5 {...options} transition={{ delay: 0.3 }}>
+          Abhishek
+        </motion.h5>
+        <motion.div {...options} transition={{ delay: 0.5 }}>
+          <Link
+            to="/admin/dashboard"
+            style={{
+              borderRadius: 0,
+              backgroundColor: "rgb(40,40,40)",
+            }}
+          >
+            <MdDashboard /> Dashboard
+          </Link>
+        </motion.div>
+)
 }
