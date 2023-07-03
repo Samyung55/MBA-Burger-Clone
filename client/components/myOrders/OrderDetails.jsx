@@ -91,3 +91,24 @@ const OrderDetails = () => {
               <span>{10}</span> x <span>{1800}</span>
             </div>
           </div>
+
+          <div>
+            <h4
+              style={{
+                fontWeight: 800,
+              }}
+            >
+              Sub Total
+            </h4>
+            <div
+              style={{
+                fontWeight: 800,
+              }}
+            >
+              ₹{2132}
+            </div>
+          </div>
+        </article>
+      </main>
+    </section>
+  );
