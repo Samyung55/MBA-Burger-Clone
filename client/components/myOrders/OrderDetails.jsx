@@ -112,3 +112,5 @@ const OrderDetails = () => {
       </main>
     </section>
   );
+
+  export default OrderDetails;
